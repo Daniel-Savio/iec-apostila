@@ -1,0 +1,210 @@
+
+#set document(
+  title: [Prova do Treinamento de SDG/SD+],
+)
+#set page(
+  paper: "a4",
+  margin: (bottom: 1.5cm, top: 3cm, left: 2cm, right: 1.5cm),
+  background: align(top, image("Cabeçalho-01-01.png")),
+
+  footer: context {
+    set text(size: 10pt)
+    [
+      #rect(
+        stroke: (left: none, top: rgb(0, 130, 66)),
+        context [
+          #box(image("SAM.png", fit: "contain"))
+          #h(1fr)
+          Atibaia -
+          16/12/2025
+          #h(1fr)
+          #counter(page).display(
+            "1/1",
+            both: true,
+          )
+        ],
+      )]
+  },
+)
+
+
+#set text(
+  font: "Times New Roman",
+  size: 12pt,
+  lang: "pt",
+  region: "BR",
+)
+#set par(
+  justify: true,
+  leading: 0.52em,
+)
+
+#show heading: set block(below: 1em)
+
+#let Answer = { [*R.:* (Resposta na folha parte indicando o número da questão) #v(12pt)] }
+
+
+
+#let item-vf(body) = {
+  grid(
+    columns: (30pt, 1fr),
+    // 1ª coluna para o parenteses, 2ª para o texto
+    align(top + center)[(  )],
+    // Espaço em branco para o aluno preencher
+    align(top + left)[#body],
+  )
+}
+
+#let item(index, body) = {
+  grid(
+    columns: (30pt, 1fr),
+    // 1ª coluna para o parenteses, 2ª para o texto
+    align(top + center)[#index) ],
+    // Espaço em branco para o aluno preencher
+    align(top + left)[#body],
+  )
+}
+
+
+#grid(
+  columns: (auto, 1fr, auto, 1fr),
+  inset: 2pt,
+  align: horizon,
+  [
+    Nome:
+  ],
+  [
+    #box(
+      width: 80%,
+      height: 10pt, // Espessura da linha
+      stroke: (bottom: black),
+    )
+  ],
+  [
+    Departamento:
+  ],
+  [
+    #box(
+      width: 80%,
+      height: 10pt, // Espessura da linha
+      stroke: (bottom: black),
+    )
+  ],
+)
+
+
+#show title: set text(size: 17pt)
+#show title: set align(center)
+#show title: set block(below: 1.2em)
+
+
+#title[
+  Prova de conclusão de treinamento - SDG/SD+
+]
+
+#align(center, [
+  == Ministrado por:
+])
+
+
+
+#grid(
+  columns: (1fr, 1fr),
+  align(center)[
+    *Daniel Sávio* \
+    Treetech Tecnologia \
+    #link("mailto:daniel.savio@treetech.com.br")
+  ],
+  grid.vline(stroke: 1pt, x: 1),
+  align(center)[
+    *Júlio Franco* \
+    Treetech Tecnologia \
+    #link("mailto:julio.franco@treetech.com.br")
+  ],
+)
+
+= Perguntas
+
+1 - Com suas palavras, explique o conceito de entradas e saídas no contexto do SDG e SD+.
+
+#Answer
+
+2 - A partir do seu entendimento do equipamento e do conteúdo apresentado durante o treinamento, explique a usabilidade do SD+ e do SDG dentro do ambiente Industrial e da área elétrica.
+
+#Answer
+
+3 - Qual dos elementos abaixo  *não* é necessário para reduzir as interferência no sinal de uma rede serial?
+
+#grid(
+  columns: (2em, auto),
+  align(left)[
+    (  )\
+    (  )\
+    (  )\
+    (  )\
+  ],
+  align(left)[
+    _Pull-up_, _Pull-down_;\
+    Resistor de terminação;\
+    Supressor de surto;\
+    Aterramento da malha;\
+
+  ],
+)
+
+4 - A interface RS485 é muito vantajosa para ser usada no chão-de-fábrica, principalmente por suporta vários equipamentos na rede, ter uma boa velocidade e uma boa distância de alcance, porém é uma tecnologia cara e complexa.
+
+#grid(
+  columns: (2em, auto),
+  align(left)[
+    V)\
+    F)\
+
+  ],
+  align(left)[
+    Verdadeiro\
+    Falso\
+
+
+  ],
+)
+
+5 - De acordo com o treinamento, qual das seguintes características descreve corretamente o padrão físico RS-485?
+
+#grid(
+  columns: (2em, auto),
+  align(left)[
+    a)\
+    b)\
+    c)\
+    d)\
+  ],
+  align(left)[
+    Suporta uma distância máxima de apenas 15 metros.\
+    É restrito a comunicação ponto a ponto entre apenas dois dispositivos.\
+    Permite comunicação com até 32 dispositivos em barramento e distâncias de até 1200 metros.
+    Utiliza obrigatoriamente fibra óptica para todas as conexões.\
+
+  ],
+)
+
+#pagebreak()
+
+6 - Julgue as seguintes afirmações sobre a interface de diagnóstico do SDG como Verdadeiras (V) ou Falsas (F). JUSTIFIQUE as alternativas falsas
+
+#item-vf[A cor *Vermelha* no status de um IED indica que não foi possível ler nenhum dos pontos mapeados.]
+
+#item-vf[A cor *Amarela* significa que o equipamento está desconectado fisicamente da rede.]
+
+#item-vf[A cor *Azul* é utilizada para indicar que o IED está em modo de simulação.]
+
+#Answer
+
+7 - No protocolo DNP3, qual é a função de uma requisição de Classe 0?
+
+#item([a], [Retornar apenas os eventos ocorridos recentemente.])
+#item([b], [Retornar apenas os eventos ocorridos recentemente.])
+#item([c], [Retornar apenas os eventos ocorridos recentemente.])
+#item([d], [Retornar apenas os eventos ocorridos recentemente.])
+
+8 - Teste 
